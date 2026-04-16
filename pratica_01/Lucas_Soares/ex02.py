@@ -4,4 +4,4 @@ valorbruto = valorhora * hora
 imposto = valorbruto * 0.15
 valorliquido = valorbruto - imposto
 
-print('Este é o valor bruto',valorbruto,' esta é a quantia de imposto pago',imposto,' e este é o10 valor liquido',valorliquido,'')
+print(f'Este é o valor bruto {valorbruto} esta é a quantia de imposto pago {imposto} e este é o10 valor liquido {valorliquido}')

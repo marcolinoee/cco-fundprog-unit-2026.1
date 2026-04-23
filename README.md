@@ -37,11 +37,11 @@ Para manter o projeto organizado, utilizaremos uma estrutura de **Monorepo**. Ca
 1. **Fork:** No topo desta página, clique no botão `Fork`. Isso criará uma cópia exata deste repositório na sua conta pessoal.
 2. **Clone:** Abra o terminal no seu computador e baixe o seu fork (substitua pelo seu nome de usuário):
    ```bash
-   git clone [https://github.com/SEU_USUARIO/ads-python-2026.git](https://github.com/SEU_USUARIO/ads-python-2026.git)
+   git clone https://github.com/SEU_USUARIO/cco-fundprog-unit-2026.1.git
    ```
 3. **Configurar o Upstream:** Para receber automaticamente as atualizações (novas aulas) que o professor postar, execute:
    ```bash
-   git remote add upstream [https://github.com/anderson-oliveira/ads-python-2026.git](https://github.com/anderson-oliveira/ads-python-2026.git)
+   git remote add upstream https://github.com/SEU_USUARIO/cco-fundprog-unit-2026.1.git
    ```
 
 ---

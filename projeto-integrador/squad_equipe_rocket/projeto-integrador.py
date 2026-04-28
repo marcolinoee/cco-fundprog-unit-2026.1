@@ -1,4 +1,31 @@
-# Ingresso de dados - Jean Soares
+# INGRESSO DE DADOS - JEAN SOARES
+
+# Parte do menu interativo:
+def exibir_menu():
+    print("\n" + "=" * 45)
+    print("DASHBOARD FINANCEIRO - SISTEMA CONTÁBIL")
+    print("=" * 45)
+    print("(1) Inserir dados de um ano")
+    print("(2) Sair")
+    print("=" * 45)
+
+
+def boas_vindas():
+    print("\nBem-vindo ao Dashboard Financeiro!")
+
+    while True:
+        exibir_menu()
+        
+        opcao = input("Escolha uma opção: ").strip()
+        if opcao == "1":
+            coletar_dados()
+        
+        elif opcao == "2":
+            print("\nAté mais! Encerrando o sistema...")
+            break
+        
+        else:
+            print("\nErro! Opção invalida! Tente novamente.")
 
 # Parte da coleta/validação de dados:
 def ler_valor(mensagem):
@@ -51,32 +78,7 @@ def coletar_dados():
             print("!" * 45)
             continue
 
-        print("\nOk! Balanço validado! Pode prosseguir.")
-        return ativo_circulante, estoques, passivo_circulante, passivo_nao_circ, patrimonio_liquido, receita_liquida, lucro_liquido
+        print("\nOk! Balanço validado! Pode prosseguir.")      
 
-
-def exibir_menu():
-    print("\n" + "=" * 45)
-    print("DASHBOARD FINANCEIRO - SISTEMA CONTÁBIL")
-    print("=" * 45)
-    print("(1) Inserir dados de um ano")
-    print("(2) Sair")
-    print("=" * 45)
-
-
-def boas_vindas():
-    print("\nBem-vindo ao Dashboard Financeiro!")
-
-    while True:
-        exibir_menu()
-        opcao = input("Escolha uma opção: ").strip()
-
-        if opcao == "1":
-            coletar_dados()
-        elif opcao == "2":
-            print("\nAté mais! Encerrando o sistema...")
-            break
-        else:
-            print("\nErro! Opção invalida! Tente novamente.")
 
 boas_vindas()

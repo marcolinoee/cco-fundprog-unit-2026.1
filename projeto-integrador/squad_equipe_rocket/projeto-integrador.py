@@ -9,24 +9,6 @@ def exibir_menu():
     print("(2) Sair")
     print("=" * 45)
 
-
-def boas_vindas():
-    print("\nBem-vindo ao Dashboard Financeiro!")
-
-    while True:
-        exibir_menu()
-        
-        opcao = input("Escolha uma opção: ").strip()
-        if opcao == "1":
-            coletar_dados()
-        
-        elif opcao == "2":
-            print("\nAté mais! Encerrando o sistema...")
-            break
-        
-        else:
-            print("\nErro! Opção invalida! Tente novamente.")
-
 # Parte da coleta/validação de dados:
 def ler_valor(mensagem):
     while True:
@@ -79,6 +61,24 @@ def coletar_dados():
             continue
 
         print("\nOk! Balanço validado! Pode prosseguir.")      
+        return ativo_circulante, ativo_nao_circ, estoques, passivo_circulante, passivo_nao_circ, passivo_total, patrimonio_liquido, receita_liquida, lucro_liquido
+    
+def boas_vindas():
+    print("\nBem-vindo ao Dashboard Financeiro!")
 
+    while True:
+        exibir_menu()
+        
+        opcao = input("Escolha uma opção: ").strip()
+        if opcao == "1":
+            dados = coletar_dados()      # <- Mudei isso aqui para bater com o código do aluno 2.
+            calcular_indicadores(dados)  # <- Mudei isso aqui para bater com o código do aluno 2.
+        
+        elif opcao == "2":
+            print("\nAté mais! Encerrando o sistema...")
+            break
+        
+        else:
+            print("\nErro! Opção invalida! Tente novamente.")
 
 boas_vindas()

@@ -1,0 +1,6 @@
+nome = (input("Insira seu nome: "))
+nasc = int(input("Insira seu ano de nascimento: "))
+atual = int(input("Insira o ano atual: "))
+altura = float(input("Insira sua altura: "))
+idade = int(atual - nasc)
+print("olá, " + str(nome) + "! Você tem " + str(idade) + " anos e sua altura é " + str(altura) + "m. Regipstro concluído.")

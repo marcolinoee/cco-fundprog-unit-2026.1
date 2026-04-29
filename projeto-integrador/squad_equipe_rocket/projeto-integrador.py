@@ -80,5 +80,3 @@ def boas_vindas():
         
         else:
             print("\nErro! Opção invalida! Tente novamente.")
-
-boas_vindas()

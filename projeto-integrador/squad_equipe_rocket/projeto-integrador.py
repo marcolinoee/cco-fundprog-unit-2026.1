@@ -36,24 +36,24 @@ def coletar_dados():
         print(f"-> Ativo Total: R$ {ativo_total}")
 
         print("\nPASSIVOS:")
-        passivo_circulante = ler_valor("Passivo Circulante:     R$ ")
-        passivo_nao_circ   = ler_valor("Passivo Nao Circulante: R$ ")
+        passivo_circulante = ler_valor("Passivo Circulante: R$ ")
+        passivo_nao_circ   = ler_valor("Passivo Não Circulante: R$ ")
         passivo_total      = passivo_circulante + passivo_nao_circ
         print(f"-> Passivo Total: R$ {passivo_total}")
 
         print("\nPATRIMÔNIO LÍQUIDO:")
-        patrimonio_liquido = ler_valor("Patrimonio Liquido: R$ ")
+        patrimonio_liquido = ler_valor("Patrimônio Líquido: R$ ")
 
         print("\nDRE:")
-        receita_liquida = ler_valor("Receita Liquida: R$ ")
-        lucro_liquido   = ler_valor("Lucro Liquido: R$ ")
+        receita_liquida = ler_valor("Receita Líquida: R$ ")
+        lucro_liquido   = ler_valor("Lucro Líquido: R$ ")
 
         # Parte da validação de ouro:
         soma_passivo_pl = passivo_total + patrimonio_liquido
 
         if ativo_total != soma_passivo_pl:
             print("\n" + "!" * 45)
-            print("ERRO FATAL: Balanço não fecha!")
+            print("ERRO FATAL: BALANÇO NÃO FECHA!")
             print(f"Ativo Total: R$ {ativo_total}")
             print(f"Passivo Total + PL: R$ {soma_passivo_pl}")
             print("Verifique os valores e tente novamente.")

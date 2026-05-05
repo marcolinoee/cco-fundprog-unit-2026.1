@@ -1,12 +1,14 @@
 # INGRESSO DE DADOS - JEAN SOARES
-
 # Parte do menu interativo:
 def exibir_menu():
     print("\n" + "=" * 45)
-    print("DASHBOARD FINANCEIRO - SISTEMA CONTÁBIL")
+    print("DASHBOARD FINANCEIRO")
     print("=" * 45)
     print("(1) Inserir dados de um ano")
-    print("(2) Sair")
+    print("(2) Ver histórico")
+    print("(3) Análise horizontal")
+    print("(4) Análise vertical")
+    print("(5) Sair")
     print("=" * 45)
 
 # Parte da coleta/validação de dados:
@@ -63,25 +65,8 @@ def coletar_dados():
         print("\nOk! Balanço validado! Pode prosseguir.")      
         return ativo_circulante, ativo_nao_circ, estoques, passivo_circulante, passivo_nao_circ, passivo_total, patrimonio_liquido, receita_liquida, lucro_liquido
     
-def boas_vindas():
-    print("\nBem-vindo ao Dashboard Financeiro!")
 
-    while True:
-        exibir_menu()
-        
-        opcao = input("Escolha uma opção: ").strip()
-        if opcao == "1":
-            dados = coletar_dados()      # <- Mudei isso aqui para bater com o código do aluno 2.
-            calcular_indicadores(dados)  # <- Mudei isso aqui para bater com o código do aluno 2.
-        
-        elif opcao == "2":
-            print("\nAté mais! Encerrando o sistema...")
-            break
-        
-        else:
-            print("\nErro! Opção invalida! Tente novamente.")
-
-# definicoes de indicadores financeiros - Rafael Varella
+# Definicoes de indicadores financeiros - Rafael Varella
 
 def liquidez_corrente(ativo_circulante, passivo_circulante):
     if passivo_circulante == 0:
@@ -126,7 +111,7 @@ def exibir_resultados(resultados):
     print("=" * 45 + "\n")
 
 
-# parte do motor analitico - Rafael Varella
+# Parte do motor analitico - Rafael Varella
 def calcular_indicadores(dados):
     (
         ativo_circulante,
@@ -169,11 +154,9 @@ def calcular_indicadores(dados):
     )
 
     exibir_resultados(resultados)
-    return resultados
-  
-boas_vindas()
+    return resultados  
 
-# Análise Vertical e Horizontal
+# Análise Vertical e Horizontal - Victor Kenuy
 
 def calcular_variacao(valor_novo, valor_antigo):
     if valor_antigo == 0:
@@ -274,22 +257,9 @@ def analise_vertical(historico):
     print("=" * 55)
 
 
-# Menu de analises
-                    
-def exibir_menu():
-    print("\n" + "=" * 45)
-    print("DASHBOARD FINANCEIRO")
-    print("=" * 45)
-    print("(1) Inserir dados de um ano")
-    print("(2) Ver histórico")
-    print("(3) Análise horizontal")
-    print("(4) Análise vertical")
-    print("(5) Sair")
-    print("=" * 45)
-
-
-def main():
-    print("\nBem-vindo ao sistema!")
+# MENU PRINCIPAL
+def boas_vindas():
+    print("\nBem-vindo ao Dashboard Financeiro!")
 
     while True:
         exibir_menu()
@@ -298,10 +268,8 @@ def main():
         if opcao == "1":
             ano = input("Ano: ")
             dados = coletar_dados()
-
-            if dados:
-                indicadores = calcular_indicadores(dados)
-                salvar_ano(ano, dados, indicadores)
+            indicadores = calcular_indicadores(dados)
+            salvar_ano(ano, dados, indicadores)
 
         elif opcao == "2":
             exibir_historico()
@@ -313,12 +281,12 @@ def main():
             analise_vertical(historico)
 
         elif opcao == "5":
-            print("Encerrando...")
+            print(" Até mais! Encerrando o sistema...")
             break
 
         else:
-            print("Opção inválida.")
+            print("Opção inválida! Tente novamente.")
 
 
 
-main()
+boas_vindas()

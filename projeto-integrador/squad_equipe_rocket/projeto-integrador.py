@@ -172,9 +172,8 @@ def calcular_indicadores(dados):
     return resultados
   
 boas_vindas()
-# ==========================================
-#  ALUNO 4 - VICTOR K. ANÁLISE HORIZONTAL E VERTICAL
-# ==========================================
+
+# Análise Vertical e Horizontal
 
 def calcular_variacao(valor_novo, valor_antigo):
     if valor_antigo == 0:
@@ -193,13 +192,11 @@ def etiqueta(variacao):
         return "[ESTÁVEL]"
 
 
-# ==============================
-#   ANÁLISE HORIZONTAL TABELA
-# ==============================
+# Análise Horizontal
 
 def analise_horizontal(historico):
     if len(historico) < 2:
-        print("\n⚠️ Precisa de pelo menos 2 anos cadastrados.")
+        print("\n Precisa de pelo menos 2 anos cadastrados.")
         return
 
     print("\n" + "=" * 55)
@@ -210,7 +207,7 @@ def analise_horizontal(historico):
         antigo = historico[i - 1]
         novo = historico[i]
 
-        print(f"\n📅 {antigo['ano']} → {novo['ano']}")
+        print(f"\n {antigo['ano']} → {novo['ano']}")
         print("-" * 55)
 
         print(f"{'Conta':<30}{'Variação':>25}")
@@ -238,13 +235,11 @@ def analise_horizontal(historico):
     print("=" * 55)
 
 
-# ==============================
-#  ANÁLISE VERTICAL TABELA
-# ==============================
+# Análise Vertical
 
 def analise_vertical(historico):
     if not historico:
-        print("\n⚠️ Nenhum dado cadastrado.")
+        print("\n Nenhum dado cadastrado.")
         return
 
     print("\n" + "=" * 55)
@@ -252,7 +247,7 @@ def analise_vertical(historico):
     print("=" * 55)
 
     for ano in historico:
-        print(f"\n📅 Ano: {ano['ano']}")
+        print(f"\n Ano: {ano['ano']}")
         print("-" * 55)
 
         print(f"{'Conta':<30}{'Percentual':>25}")
@@ -270,10 +265,60 @@ def analise_vertical(historico):
         print(f"{'Receita Líquida':<30}{'100%':>25}")
 
         if percentual_lucro is not None:
-            print(f"{'Lucro Líquido':<30}{f'{percentual_lucro:.2f}%':>25}")
+            print(f"{'Lucro Líquido':<30}{percentual_lucro:.2f}%")
         else:
             print(f"{'Lucro Líquido':<30}{'N/A':>25}")
 
         print("-" * 55)
 
     print("=" * 55)
+
+
+# Menu de analises
+                    
+def exibir_menu():
+    print("\n" + "=" * 45)
+    print("DASHBOARD FINANCEIRO")
+    print("=" * 45)
+    print("(1) Inserir dados de um ano")
+    print("(2) Ver histórico")
+    print("(3) Análise horizontal")
+    print("(4) Análise vertical")
+    print("(5) Sair")
+    print("=" * 45)
+
+
+def main():
+    print("\nBem-vindo ao sistema!")
+
+    while True:
+        exibir_menu()
+        opcao = input("Escolha: ").strip()
+
+        if opcao == "1":
+            ano = input("Ano: ")
+            dados = coletar_dados()
+
+            if dados:
+                indicadores = calcular_indicadores(dados)
+                salvar_ano(ano, dados, indicadores)
+
+        elif opcao == "2":
+            exibir_historico()
+
+        elif opcao == "3":
+            analise_horizontal(historico)
+
+        elif opcao == "4":
+            analise_vertical(historico)
+
+        elif opcao == "5":
+            print("Encerrando...")
+            break
+
+        else:
+            print("Opção inválida.")
+
+
+
+main()

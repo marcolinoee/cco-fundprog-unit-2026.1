@@ -94,8 +94,8 @@ def endividamento(passivo_total, patrimonio_liquido):
 
 
 def liquidez_seca(ativo_circulante, estoques, passivo_circulante):
-    if passivo_circulante == 0:
-        return None
+    if passivo_circulante == 0: 
+      return None
     return (ativo_circulante - estoques) / passivo_circulante
 
 def exibir_resultados(resultados):
@@ -155,6 +155,29 @@ def calcular_indicadores(dados):
 
     exibir_resultados(resultados)
     return resultados  
+
+# ALUNO 3 - JOÃO GABRIEL
+historico = []
+
+def salvar_ano(ano, dados, indicadores):
+    registro = {
+        "ano": ano,
+        "receita_liquida": dados[7],
+        "lucro_liquido": dados[8],
+        "patrimonio_liquido": dados[6],
+        "indicadores": indicadores
+    }
+
+    historico.append(registro)
+    print(f"\nDados do ano {ano} salvos no histórico!")
+
+def exibir_historico():
+    if not historico:
+        print("\nNenhum dado cadastrado.")
+        return
+    print("\n=== HISTÓRICO ===")
+    for item in historico:
+        print(f"Ano: {item['ano']} | Lucro: R$ {item['lucro_liquido']:.2f}")
 
 # Análise Vertical e Horizontal - Victor Kenuy
 
@@ -263,10 +286,10 @@ def boas_vindas():
 
     while True:
         exibir_menu()
-        opcao = input("Escolha: ").strip()
+        opcao = input("Escolha uma opção: ").strip()
 
         if opcao == "1":
-            ano = input("Ano: ")
+            ano = input("Ano de referência: ")
             dados = coletar_dados()
             indicadores = calcular_indicadores(dados)
             salvar_ano(ano, dados, indicadores)

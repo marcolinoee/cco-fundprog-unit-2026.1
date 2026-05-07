@@ -110,7 +110,7 @@ Forneça os dados solicitados abaixo para continuar.''')
 
         voltar_menu()
 
-    except ValueError:
+    except:
         limpa()
         print('Dados inválidos! Digite apenas números.')
         input("Pressione Enter para tentar novamente...")

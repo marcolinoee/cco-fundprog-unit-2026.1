@@ -1,0 +1,32 @@
+name: Aceite Automatico de Praticas
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+
+jobs:
+  auto-merge-praticas:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout do Código
+        uses: actions/checkout@v4
+
+      # O GitHub por si só já checa se há conflitos de merge (mergeable)
+      # Se o PR puder ser mergeado de forma limpa, o comando abaixo executa o merge imediatamente.
+      - name: Auto-Merge se não houver conflitos
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Avaliando PR #${{ github.event.pull_request.number }}..."
+          
+          # Tenta fazer o merge. Se houver conflito de Git nativo, o comando falha e avisa o aluno.
+          gh pr merge ${{ github.event.pull_request.number }} --merge --admin || {
+            echo "::error::Não foi possível fazer o merge automático devido a conflitos de código. O professor precisará avaliar ou o aluno deve atualizar a branch."
+            exit 1
+          }

@@ -18,7 +18,7 @@ def limpeza_dos_dados(entrada):
             partes = linha.split(',')
 
             if len(partes) != 5:
-                print(f"Linha ignorada (formato errado): {linha}")
+                print(f"Linha ignorada (formato errado): {linha}") 
                 continue
 
             data           = partes[0].strip()

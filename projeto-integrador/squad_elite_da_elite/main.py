@@ -1,5 +1,5 @@
 from limpeza import limpeza_dos_dados
-from classes import calcularAnalytics
+from classes import Dataset  # Corrigido: Importando a classe correta
 from relatorios import gerar_grafico_vendas
 
 def main():
@@ -20,9 +20,17 @@ def main():
 
         linhas_brutas.append(entrada)
 
-   
+    # Processamento dos dados
     linhas_processadas = limpeza_dos_dados(linhas_brutas) 
-    vendas_estado = calcularAnalytics(linhas_processadas)
+    
+    # Instanciando a classe e carregando os dados limpos
+    sistema = Dataset()
+    sistema.carregar_dados(linhas_processadas)
+    
+    # Executa o cálculo e armazena o retorno para o gráfico
+    vendas_estado = sistema.calcular_analytics()
+    
+    # Gera o gráfico com os dados processados
     gerar_grafico_vendas(vendas_estado)
 
 if __name__ == "__main__":

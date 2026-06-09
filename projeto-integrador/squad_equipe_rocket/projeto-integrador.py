@@ -1,4 +1,5 @@
 # DASHBOARD FINANCEIRO - PROJETO 15
+# SEGUNDA ENTREGA
 
 # ALUNO 3 - JOÃO GABRIEL
 
@@ -139,7 +140,6 @@ class Empresa:
                 print(f"  {nome:<22} {self._etiqueta(variacao)}")
 
         print("\n" + "=" * 45)
-
 
 # INGRESSO DE DADOS - Jean Soares
 # Parte da coleta/validação de dados:

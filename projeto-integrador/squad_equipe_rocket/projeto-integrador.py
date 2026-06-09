@@ -140,7 +140,6 @@ class Empresa:
 
         print("\n" + "=" * 45)
 
-
 # INGRESSO DE DADOS - Jean Soares
 # Parte da coleta/validação de dados:
 

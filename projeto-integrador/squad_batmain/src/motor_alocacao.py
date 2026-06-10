@@ -14,7 +14,7 @@ def exibir_slots():
         [8] Quinta Noite
         [9] Sexta Manhã
         [10] Sexta Noite
-  ''')
+''')
 def verificar_slots():
     while True: 
         try:

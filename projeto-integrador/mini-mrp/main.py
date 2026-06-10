@@ -29,9 +29,9 @@ def executar_motor_explosao(quantidade_pedida, componentes):
 def mostrar_planilha(necessidade, semana_entrega):
     total_semanas = 8
     print("")
-    print("==============================================================")
+    print("=" * 60)
     print("\n--- PLANILHA DE NECESSIDADES ---")
-    print("==============================================================")
+    print("=" * 60)
 
     cabecalho = "componente   "
     for semana in range(1, total_semanas + 1):
@@ -79,10 +79,10 @@ def main():
             while quantidade_pedida <= 0:
                 print("Erro: A quantidade deve ser maior que 0.")
                 quantidade_pedida = int(input("Quantidade: "))
-            semana_entrega = int(input("Semana de entrega (1-8): "))
-            while semana_entrega < 1 or semana_entrega > 8:
-                print("Erro: Prazo deve ser entre a semana 1 e 8.")
-                semana_entrega = int(input("Semana de entrega (1-8): "))
+            semana_entrega = int(input("Semana de entrega (2-8): "))
+            while semana_entrega < 2 or semana_entrega > 8:
+                print("Erro: Prazo deve ser entre a semana 2 e 8.")
+                semana_entrega = int(input("Semana de entrega (2-8): "))
             
             pedido_existe = True
             print(f"\n[!] Demanda de {quantidade_pedida} unidades de {nome_produto} registrada com sucesso.")
@@ -108,7 +108,7 @@ def main():
                     "Item 5": quantidade_pedida, 
                 }
 
-                mostrar_planilha(necessidade, semana_entrega,)
+                mostrar_planilha(necessidade, semana_entrega - 1)
 
             else:
                 print("\n[!] Erro: Defina a demanda antes de executar o motor.")

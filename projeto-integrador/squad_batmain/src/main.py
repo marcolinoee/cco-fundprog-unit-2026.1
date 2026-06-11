@@ -1,35 +1,42 @@
-from menus_interface import verifica_notas, menu_opcao
-from matriz_diario import calcular_media_aluno
-from motor_alocacao import cadastrar_aula
-from os import system as s
+# main.py
 
-def clear():
-    s('cls')
+from entidades_poo import Aluno, Professor, Disciplina, Turma
+from motor_alocacao import MotorAlocacao
+from matriz_diario  import lancar_notas, gerar_relatorio_ascii, processar_diario, adicionar_aluno
+from menus_interface import Menu
+
 def main():
-    n1 = 0
-    n2 = 0
-    n3 = 0
-    while True:
-        
-        opcao = menu_opcao()
+    motor  = MotorAlocacao()
+    menu   = Menu()
+    alunos = []
 
-        if opcao == 1:
-            clear()
-            cadastrar_aula()
-        elif opcao == 2:
-            clear()
-            n1 = verifica_notas('av1'.upper())
-            n2 = verifica_notas('av2'.upper())
-            n3 = verifica_notas('av3'.upper())
-            calcular_media_aluno(n1, n2, n3)
-        elif opcao == 0:
-            clear()
-            print('Sessão encerrada...\nAgradecemos por utilizar o nosso programa!')
+    while True:
+        opcao = menu.exibir_principal()
+
+        if opcao == "0":
+            print("Sistema encerrado.")
             break
-        else:
-            print('[ERRO] Digite um valor entre 0, 1 e 2!')
-            
+
+        elif opcao == "1":               
+            nome, carga = menu.coletar_dados_professor()
+            prof = Professor(nome, carga)
+            motor.cadastrar_professor(prof)
+            print(f"=== {prof} cadastrado! ===")
+
+        elif opcao == "2":               
+            nome, matricula = menu.coletar_dados_aluno()
+            aluno = Aluno(nome, matricula)
+            adicionar_aluno(alunos, aluno)
+            print(f"=== {aluno} cadastrado! ===")
+        
+        elif opcao == "3":               
+            menu.fluxo_alocacao(motor)
+
+        elif opcao == "4":               
+            diario = lancar_notas()
+            resultado =processar_diario(diario)
+
+        elif opcao == "5":               
+            gerar_relatorio_ascii(resultado)
 
 main()
-    
-    

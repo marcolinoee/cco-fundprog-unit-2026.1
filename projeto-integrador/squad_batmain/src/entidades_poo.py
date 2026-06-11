@@ -38,6 +38,16 @@ class Professor:
 
     def carga_atual(self) -> int:
         return len(self.aulas)
+    
+    def remover_ultima_aula(self) -> None:
+
+        if self.aulas:
+            slot_removido = self.aulas.pop()
+            print(
+            f"Slot '{slot_removido}' removido de "
+            f"Prof. {self.nome}. "
+            f"({len(self.aulas)}/{self.carga_max} slots ocupados)"
+            )
 
     def __repr__(self):
         return (
@@ -52,9 +62,9 @@ class Turma:
         self.disciplina = disciplina
         self.alunos: list[Aluno] = []
 
-    def adicionar_aluno(self, aluno: Aluno) -> None:
+    def adicionar_aluno(self, aluno, matricula: Aluno) -> None:
         self.alunos.append(aluno)
-        print(f"[OK] {aluno.nome} adicionado(a) à turma {self.codigo}.")
+        print(f"[OK] {aluno.nome} adicionado(a) à turma {matricula.codigo}.")
 
     def listar_alunos(self) -> None:
         print(f"\n=== Turma {self.codigo} | {self.disciplina.nome} "f"| Prof. {self.professor.nome} ===")

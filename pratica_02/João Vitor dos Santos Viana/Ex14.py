@@ -1,6 +1,4 @@
-print('Vou refazer o exercício 13!')
+contador = 10
 
-for i in range(1, 11):
-    print(f'{i}')
-
-print('A leitura fica mais simples, pois não é preciso declarar variavel.')
+for i in range(contador, 0, -1):
+    print(i)

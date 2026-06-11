@@ -1,11 +1,10 @@
 # Lista de Exercícios Práticos para Laboratório
-
 ## Matrizes e Listas Bidimensionais em Python
 
-**Tema:** Matrizes / listas bidimensionais em nível introdutório
-**Linguagem:** Python
-**Formato:** Laboratório prático
-**Carga sugerida:** 2 a 3 horas
+**Tema:** Matrizes / listas bidimensionais em nível introdutório  
+**Linguagem:** Python  
+**Formato:** Laboratório prático  
+**Carga sugerida:** 2 a 3 horas  
 **Entrega sugerida:** arquivos `.py` organizados por exercício ou um único notebook com seções identificadas.
 
 ---
@@ -524,8 +523,6 @@ No arquivo `ex21_debug_indice.py`, responda em comentários:
 
 ---
 
----
-
 ## Exercício 22 — Depuração: matriz irregular
 
 **Objetivo:** percorrer matriz com linhas de tamanhos diferentes.
@@ -545,6 +542,10 @@ for i in range(len(dados)):
 ```
 
 Crie uma versão corrigida que percorra todas as linhas com segurança, usando o tamanho real de cada linha.
+
+**Pergunta obrigatória no comentário final:** por que `range(3)` não é seguro nesse caso?
+
+---
 
 ## Exercício 23 — Depuração: inicialização incorreta
 
@@ -620,14 +621,14 @@ O programa deve:
 
 ## 4. Critérios de avaliação sugeridos
 
-| Critério                     | Descrição                                                             | Pontuação sugerida |
-| ----------------------------- | ----------------------------------------------------------------------- | -------------------: |
-| Criação correta de matrizes | Usa listas de listas de forma coerente                                  |                  2,0 |
-| Acesso por índices           | Usa `matriz[linha][coluna]` corretamente                              |                  2,0 |
-| Laços aninhados              | Percorre linhas e colunas sem erros                                     |                  2,0 |
-| Resolução dos problemas     | Calcula médias, contagens, buscas e atualizações                     |                  2,0 |
-| Clareza do código            | Usa bons nomes, comentários úteis e organização                     |                  1,0 |
-| Depuração                   | Identifica e corrige erros de índice, irregularidade e inicialização |                  1,0 |
+| Critério | Descrição | Pontuação sugerida |
+|---|---|---:|
+| Criação correta de matrizes | Usa listas de listas de forma coerente | 2,0 |
+| Acesso por índices | Usa `matriz[linha][coluna]` corretamente | 2,0 |
+| Laços aninhados | Percorre linhas e colunas sem erros | 2,0 |
+| Resolução dos problemas | Calcula médias, contagens, buscas e atualizações | 2,0 |
+| Clareza do código | Usa bons nomes, comentários úteis e organização | 1,0 |
+| Depuração | Identifica e corrige erros de índice, irregularidade e inicialização | 1,0 |
 
 ---
 

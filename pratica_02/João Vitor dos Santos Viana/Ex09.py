@@ -1,12 +1,14 @@
-salario_atual = float(input('Quanto você ganha por mês? '))
 
-if salario_atual <= 1500:
-    aumento = salario_atual * (15 / 100)
-elif salario_atual <= 3000:
-    aumento = salario_atual * (10 / 100)
+salario = float(input("Digite o salário do funcionário: "))
+
+if salario > 1500 and salario <= 3000:
+    aumento = salario * 0.10
+elif salario <= 1500:
+    aumento = salario * 0.15
 else:
-    aumento = salario_atual * (5 / 100)
+    aumento = salario * 0.05
 
-salario_novo = salario_atual + aumento
+print("Aumento:", aumento)
+print("Novo salário:", salario + aumento)
 
-print(f'Seu salario com reajustes ficou R$ {salario_novo} e teve um aumento de R$ {aumento}.')
+

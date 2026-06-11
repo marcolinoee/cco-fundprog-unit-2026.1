@@ -1,24 +1,37 @@
-print('---Digite uma das opções abaixou---')
 
-while True:
-    print('1- Somar')
-    print('2- Subtrair')
-    print('3- Sair')
+class Menu:
+    def __init__(self):
+        pass
 
-    opcao = input('Escolha uma opção:')
+    def exibir_menu(self):
+        print("\n1 - Somar")
+        print("2 - Subtrair")
+        print("3 - Sair")
 
-    if opcao == '0':
-        print('Encerrando o progama...')
-        break
+    def escolher_opcao(self):
+        while True:
+            self.exibir_menu()
+            opcao = input("Escolha uma opção: ")
 
-    elif opcao =='1':
-        n1 = int(input('Digite o primeiro número: '))
-        n2 = int(input('Digite o segundo número: '))
-        print(f'O resultado da soma foi: {n1 + n2}')
+            if opcao == "1":
+                self.somar()
+            elif opcao == "2":
+                self.subtrair()
+            elif opcao == "3":
+                print("Saindo do programa...")
+                break
+            else:
+                print("Opção inválida. Tente novamente.")
 
-    elif opcao =='2':
-        n1 = int(input('Digite o primeiro número: '))
-        n2 = int(input('Digite o segundo número: '))
-        print(f'O resultado da subtração foi: {n1 - n2}')
-    else:
-        print('Opção inválida! Tente novamente.')
+    def somar(self):
+        a = int(input("Número 1: "))
+        b = int(input("Número 2: "))
+        print("Resultado:", a + b)
+
+    def subtrair(self):
+        a = int(input("Número 1: "))
+        b = int(input("Número 2: "))
+        print("Resultado:", a - b)
+
+menu = Menu()
+menu.escolher_opcao()

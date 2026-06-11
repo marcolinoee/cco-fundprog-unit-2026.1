@@ -1,3 +1,4 @@
+
 salario = float(input("Digite o salário do funcionário: "))
 
 if salario > 1500 and salario <= 3000:
@@ -9,3 +10,5 @@ else:
 
 print("Aumento:", aumento)
 print("Novo salário:", salario + aumento)
+
+

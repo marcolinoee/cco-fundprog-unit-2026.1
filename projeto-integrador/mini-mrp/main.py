@@ -1,22 +1,22 @@
 def inicializar_estoque():
-    return [
-        {"nome": "Bateria", "estoque": 100},
-        {"nome": "Tela", "estoque": 100},
-        {"nome": "Processador", "estoque": 100},
-        {"nome": "Carcaça", "estoque": 100},
-        {"nome": "Memória", "estoque": 100}
-    ]
-
+    componentes = [
+        {"nome": "Item 1", "estoque": 100},
+        {"nome": "Item 2", "estoque": 100},
+        {"nome": "Item 3", "estoque": 100},
+        {"nome": "Item 4", "estoque": 100},
+        {"nome": "Item 5", "estoque": 100}
+    ] 
+    return componentes
 #MOTOR DE EXPLOSÃO
 def executar_motor_explosao(quantidade_pedida, componentes):
     print("\n" + "-"*40)
     print(f"EXECUTANDO EXPLOSÃO PARA {quantidade_pedida} UNIDADES")
     print("-"*40)
     
-    for item in componentes:
+    for item  in componentes:
         nome_item = item["nome"]
         estoque_atual = item["estoque"]
-        necessidade = quantidade_pedida # Proporção 1:1
+        necessidade = quantidade_pedida 
         
         saldo_pos_producao = estoque_atual - necessidade
         
@@ -26,29 +26,36 @@ def executar_motor_explosao(quantidade_pedida, componentes):
             print(f"Item: {nome_item:12} | [OK] Saldo final: {saldo_pos_producao}")
 
 #Planilha
-def mostrar_planilha(necessidades):
-    semanas = 8
-
+def mostrar_planilha(necessidade, semana_entrega):
+    total_semanas = 8
+    print("")
+    print("=" * 60)
     print("\n--- PLANILHA DE NECESSIDADES ---")
+    print("=" * 60)
 
-    print("Componente".ljust(15), end="")
-    for i in range(1, semanas + 1):
-        print(f"S{i}".rjust(5), end="")
-    print()
+    cabecalho = "componente   "
+    for semana in range(1, total_semanas + 1):
+        cabecalho = cabecalho + "S" + str(semana) + "   "
+    print(cabecalho)
+    print("-"*60)
 
-    print("-" * (15 + semanas * 5))
+    for nome in necessidade:
+        linha = nome + "   "
+        for semana in range(1, total_semanas + 1):
+            if semana == semana_entrega:
+                valor = necessidade [nome]
+            else:
+                valor = 0
+            linha = linha + str(valor) + "   "
+        print(linha)
+        print("-"*60)
 
-    for componente, valores in necessidades.items():
-        print(componente.ljust(15), end="")
-        for v in valores:
-            print(str(v).rjust(5), end="")
-        print()
 
 def exibir_menu():
     print("\n" + "="*35)
-    print("      SISTEMA MRP - APPLE IND.     ")
+    print("      SISTEMA MRP     ")
     print("="*35)
-    print("1. Inserir demanda de iPhone")
+    print("1. Inserir produto")
     print("2. Ver plano de produção (MPS)")
     print("3. Executar motor de explosão")
     print("4. Sair")
@@ -56,7 +63,7 @@ def exibir_menu():
 
 def main():
     estoque_central = inicializar_estoque()
-    modelo_iphone = ""
+    nome_produto = ""
     quantidade_pedida = 0
     semana_entrega = 0
     pedido_existe = False
@@ -66,24 +73,24 @@ def main():
         opcao = input("Escolha uma opção: ")
 
         if opcao == "1":
-            modelo_iphone = input("Modelo do iPhone (Ex: iPhone 15): ")
+            nome_produto = input("Insira o produto: ")
             
             quantidade_pedida = int(input("Quantidade: "))
             while quantidade_pedida <= 0:
                 print("Erro: A quantidade deve ser maior que 0.")
                 quantidade_pedida = int(input("Quantidade: "))
-            semana_entrega = int(input("Semana de entrega (1-8): "))
-            while semana_entrega < 1 or semana_entrega > 8:
-                print("Erro: Prazo deve ser entre a semana 1 e 8.")
-                semana_entrega = int(input("Semana de entrega (1-8): "))
+            semana_entrega = int(input("Semana de entrega (2-8): "))
+            while semana_entrega < 2 or semana_entrega > 8:
+                print("Erro: Prazo deve ser entre a semana 2 e 8.")
+                semana_entrega = int(input("Semana de entrega (2-8): "))
             
             pedido_existe = True
-            print(f"\n[!] Demanda de {quantidade_pedida} unidades registrada com sucesso.")
+            print(f"\n[!] Demanda de {quantidade_pedida} unidades de {nome_produto} registrada com sucesso.")
 
         elif opcao == "2":
             if pedido_existe:
                 print("\n--- PLANO MESTRE DE PRODUÇÃO (MPS) ---")
-                print(f"PRODUTO:  {modelo_iphone}")
+                print(f"PRODUTO:  {nome_produto}")
                 print(f"VOLUME:   {quantidade_pedida} unidades")
                 print(f"PRAZO:    Semana {semana_entrega}")
             else:
@@ -93,15 +100,15 @@ def main():
             if pedido_existe:
                 executar_motor_explosao(quantidade_pedida, estoque_central)
                  # PLANILHA
-                necessidades = {
-                    "Bateria": [0, 0, quantidade_pedida, 0, 0, 0, 0, 0],
-                    "Tela": [0, 0, quantidade_pedida, 0, 0, 0, 0, 0],
-                    "Processador": [0, 0, quantidade_pedida, 0, 0, 0, 0, 0],
-                    "Carcaça": [0, 0, quantidade_pedida, 0, 0, 0, 0, 0],
-                    "Memória": [0, 0, quantidade_pedida, 0, 0, 0, 0, 0],
+                necessidade = {
+                    "Item 1": quantidade_pedida, 
+                    "Item 2": quantidade_pedida, 
+                    "Item 3": quantidade_pedida, 
+                    "Item 4": quantidade_pedida,
+                    "Item 5": quantidade_pedida, 
                 }
 
-                mostrar_planilha(necessidades)
+                mostrar_planilha(necessidade, semana_entrega - 1)
 
             else:
                 print("\n[!] Erro: Defina a demanda antes de executar o motor.")

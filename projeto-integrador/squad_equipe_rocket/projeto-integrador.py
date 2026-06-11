@@ -95,6 +95,19 @@ class Empresa:
         if valor_velho == 0:
             return None
         return ((valor_novo / valor_velho) - 1) * 100
+# PROJETO 15 - DASHBOARD FINANCEIRO
+# INGRESSO DE DADOS - JEAN SOARES
+# Parte do menu interativo:
+def exibir_menu():
+    print("\n" + "=" * 45)
+    print("DASHBOARD FINANCEIRO")
+    print("=" * 45)
+    print("(1) Inserir dados de um ano")
+    print("(2) Ver histórico")
+    print("(3) Análise horizontal")
+    print("(4) Análise vertical")
+    print("(5) Sair")
+    print("=" * 45)
 
     def _etiqueta(self, variacao):
         if variacao is None:

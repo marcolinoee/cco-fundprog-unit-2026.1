@@ -1,0 +1,105 @@
+import os
+
+def limpar_tela():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def processar_ano(populacao, caixa):
+ nova_pop = int(populacao + (populacao * 0.05) - (populacao * 0.02))
+ novo_caixa = caixa + (populacao * 10)
+ return nova_pop, novo_caixa
+
+ano_atual = 1
+populacao = 1000
+caixa = 50000
+
+usinas = 0
+estacoes_agua = 0
+hospitais = 0
+
+custo_usina = 20000
+custo_agua = 15000
+custo_hospital = 25000
+
+while populacao > 0 and ano_atual <= 50:
+
+    limpar_tela()
+
+    print(f"ANO: {ano_atual}")
+    print(f"População: {populacao}")
+    print(f"Caixa: R$ {caixa}")
+    print(f"Usinas: {usinas}")
+    print(f"Água: {estacoes_agua}")
+    print(f"Hospitais: {hospitais}")
+    print("-" * 30)
+
+    # MENU INTERNO (repete até avançar ano)
+    while True:
+        print("\nMENU:")
+        print("1 - Construir Usina")
+        print("2 - Construir Água")
+        print("3 - Construir Hospital")
+        print("4 - Avançar Ano")
+
+        entrada = input("Escolha uma opção: ")
+
+        if not entrada.isdigit():
+            print("Digite apenas números!")
+            continue
+
+        escolha = int(entrada)
+        # --------------------------
+        # OPÇÃO 1 - USINA
+        # --------------------------
+        if escolha == 1:
+            if caixa >= custo_usina:
+                usinas += 1
+                caixa -= custo_usina
+                print("Usina construída!")
+            else:
+                print("Dinheiro insuficiente!")
+
+        # --------------------------
+        # OPÇÃO 2 - ÁGUA
+        # --------------------------
+        elif escolha == 2:
+            if caixa >= custo_agua:
+                estacoes_agua += 1
+                caixa -= custo_agua
+                print("Estação de água construída!")
+            else:
+                print("Dinheiro insuficiente!")
+
+        # --------------------------
+        # OPÇÃO 3 - HOSPITAL
+        # --------------------------
+        elif escolha == 3:
+            if caixa >= custo_hospital:
+                hospitais += 1
+                caixa -= custo_hospital
+                print("Hospital construído!")
+            else:
+                print("Dinheiro insuficiente!")
+
+        # --------------------------
+        # OPÇÃO 4 - AVANÇAR ANO
+        # --------------------------
+        elif escolha == 4:
+            populacao, caixa = processar_ano(populacao, caixa)
+            ano_atual += 1
+            break  # sai do menu
+
+        # --------------------------
+        # OPÇÃO INVÁLIDA
+        # --------------------------
+        else:
+            print("Opção inválida!")
+
+# --------------------------
+# FIM DO JOGO
+# --------------------------
+limpar_tela()
+
+if populacao <= 0:
+    print("GAME OVER — A população acabou.")
+else:
+    print("PARABÉNS — Você governou por 50 anos!")

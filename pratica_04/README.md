@@ -58,10 +58,11 @@ nomes_brutos = ["  ana", "BRUNO  ", "cArLa silva", "  joão pedro  "]
 ```
 
 **Tarefas:**
+
 1. Crie uma lista chamada nomes_padronizados.
-1. Percorra a lista original com for.
-1. Aplique as operações de limpeza e padronização.
-1. Exiba a lista final.
+2. Percorra a lista original com for.
+3. Aplique as operações de limpeza e padronização.
+4. Exiba a lista final.
 
 **Desafio opcional:** Mostre também quantos nomes existem na lista final.
 
@@ -78,10 +79,11 @@ nome_completo = "Maria Clara Souza"
 ```
 
 **Tarefas:**
+
 1. Separe o texto em partes usando split().
-1. Exiba a lista resultante.
-1. Monte uma nova string usando join() com o separador "-".
-1. Exiba o texto final.
+2. Exiba a lista resultante.
+3. Monte uma nova string usando join() com o separador "-".
+4. Exiba o texto final.
 
 **Desafio opcional:** Exiba também apenas o primeiro nome e o último sobrenome.
 
@@ -99,10 +101,11 @@ notas = [7.0, 8.5, 6.0, 9.0, 7.5]
 ```
 
 **Tarefas:**
+
 1. Mostre a primeira letra da palavra.
-1. Mostre a quarta letra da palavra.
-1. Mostre a primeira nota da lista.
-1. Mostre a última nota da lista usando indexação.
+2. Mostre a quarta letra da palavra.
+3. Mostre a primeira nota da lista.
+4. Mostre a última nota da lista usando indexação.
 
 **Desafio opcional:** Explique, em comentário, por que o primeiro índice é 0.
 
@@ -120,10 +123,11 @@ valores = [10, 20, 30, 40, 50, 60]
 ```
 
 **Tarefas:**
+
 1. Exiba os 4 primeiros caracteres da palavra.
-1. Exiba os caracteres da posição 4 até a 8.
-1. Exiba os três primeiros elementos da lista.
-1. Exiba os elementos da posição 2 até o final da lista.
+2. Exiba os caracteres da posição 4 até a 8.
+3. Exiba os três primeiros elementos da lista.
+4. Exiba os elementos da posição 2 até o final da lista.
 
 **Desafio opcional:** Teste outros recortes e registre, em comentário, o que você observou.
 
@@ -140,9 +144,10 @@ frutas = ["maçã", "banana", "uva", "pera"]
 ```
 
 **Tarefas:**
+
 1. Percorra a lista com for.
-1. Exiba uma frase no formato: Eu gosto de <fruta>.
-1. Ao final, exiba a quantidade de frutas percorridas.
+2. Exiba uma frase no formato: Eu gosto de `<fruta>`.
+3. Ao final, exiba a quantidade de frutas percorridas.
 
 **Desafio opcional:** Repita a ideia percorrendo cada letra da palavra "Python".
 
@@ -159,9 +164,10 @@ alunos = ["Ana", "Bruno", "Carla", "Daniel"]
 ```
 
 **Tarefas:**
+
 1. Use for com range(len(alunos)).
-1. Exiba a posição e o nome do aluno correspondente.
-1. Mantenha a saída organizada e legível.
+2. Exiba a posição e o nome do aluno correspondente.
+3. Mantenha a saída organizada e legível.
 
 **Desafio opcional:** Mostre a saída no formato: Índice 0 -> Ana.
 
@@ -179,11 +185,12 @@ procurado = "Carla"
 ```
 
 **Tarefas:**
+
 1. Crie uma variável booleana para indicar se o nome foi encontrado.
-1. Percorra a lista com for.
-1. Compare cada item com o nome procurado.
-1. Interrompa o laço quando encontrar o elemento.
-1. Exiba o resultado final.
+2. Percorra a lista com for.
+3. Compare cada item com o nome procurado.
+4. Interrompa o laço quando encontrar o elemento.
+5. Exiba o resultado final.
 
 **Desafio opcional:** Troque o valor procurado por um nome inexistente e teste novamente.
 
@@ -200,9 +207,10 @@ itens = ["mouse", "teclado", "mouse", "monitor", "mouse", "teclado"]
 ```
 
 **Tarefas:**
+
 1. Conte quantas vezes "mouse" aparece.
-1. Conte quantas vezes "teclado" aparece.
-1. Exiba os resultados com frases completas.
+2. Conte quantas vezes "teclado" aparece.
+3. Exiba os resultados com frases completas.
 
 **Desafio opcional:** Faça o mesmo com outro item de sua escolha.
 
@@ -219,10 +227,11 @@ Sugestão de itens: estudar Python, resolver exercícios, revisar código, envia
 ```
 
 **Tarefas:**
+
 1. Crie uma lista vazia.
-1. Adicione pelo menos quatro tarefas.
-1. Exiba a lista final.
-1. Exiba também o total de tarefas cadastradas.
+2. Adicione pelo menos quatro tarefas.
+3. Exiba a lista final.
+4. Exiba também o total de tarefas cadastradas.
 
 **Desafio opcional:** Adicione uma quinta tarefa escolhida por você.
 
@@ -239,10 +248,11 @@ notas = [4.5, 7.0, 8.0, 5.5, 9.0, 6.8, 7.2]
 ```
 
 **Tarefas:**
+
 1. Crie uma lista chamada aprovados.
-1. Percorra a lista de notas.
-1. Adicione somente as notas aprovadas.
-1. Exiba a lista final de aprovados.
+2. Percorra a lista de notas.
+3. Adicione somente as notas aprovadas.
+4. Exiba a lista final de aprovados.
 
 **Desafio opcional:** Exiba também a quantidade de estudantes aprovados.
 
@@ -260,10 +270,11 @@ consulta = "joão"
 ```
 
 **Tarefas:**
+
 1. Crie uma nova lista com os nomes padronizados.
-1. Padronize também o nome da consulta.
-1. Verifique se o estudante consultado está na lista.
-1. Exiba a lista final e a mensagem de presença ou ausência.
+2. Padronize também o nome da consulta.
+3. Verifique se o estudante consultado está na lista.
+4. Exiba a lista final e a mensagem de presença ou ausência.
 
 **Desafio opcional:** Teste o programa com outro nome de consulta que não esteja presente.
 
@@ -280,9 +291,10 @@ Situações: (a) nome completo de um aluno; (b) notas de quatro avaliações; (c
 ```
 
 **Tarefas:**
+
 1. Classifique cada item como string ou lista.
-1. Crie uma variável de exemplo para cada situação.
-1. Justifique sua escolha com um comentário curto.
+2. Crie uma variável de exemplo para cada situação.
+3. Justifique sua escolha com um comentário curto.
 
 **Desafio opcional:** Adicione duas novas situações criadas por você.
 
@@ -304,10 +316,11 @@ b) nomes = ["Ana", "Bruno"]
 ```
 
 **Tarefas:**
+
 1. Explique por que o primeiro trecho imprime None.
-1. Corrija o primeiro trecho.
-1. Explique o erro do segundo trecho.
-1. Reescreva o segundo trecho de forma segura.
+2. Corrija o primeiro trecho.
+3. Explique o erro do segundo trecho.
+4. Reescreva o segundo trecho de forma segura.
 
 **Desafio opcional:** Crie um terceiro exemplo de erro envolvendo listas ou strings e corrija-o.
 
@@ -324,12 +337,13 @@ Você pode reutilizar os dados dos exercícios anteriores ou criar novos conjunt
 ```
 
 **Tarefas:**
+
 1. Organize o código em etapas bem identificadas.
-1. Use pelo menos uma operação de string.
-1. Use pelo menos uma lista criada ou preenchida no programa.
-1. Use percurso com for.
-1. Use busca simples ou filtragem.
-1. Exiba um relatório final legível.
+2. Use pelo menos uma operação de string.
+3. Use pelo menos uma lista criada ou preenchida no programa.
+4. Use percurso com for.
+5. Use busca simples ou filtragem.
+6. Exiba um relatório final legível.
 
 **Desafio opcional:** Inclua comentários explicando a lógica de cada etapa do programa.
 
